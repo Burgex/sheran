@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Crea tu compañero especial | SHERAN</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#F8F5F2;
+color:#4A3A34;
+}
+
+header{
+padding:40px;
+text-align:center;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+h1{
+font-family:'Cormorant Garamond',serif;
+font-size:50px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:50px 20px;
+}
+
+.configurador{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.avatar{
+background:white;
+border-radius:25px;
+padding:20px;
+box-shadow:0 10px 35px rgba(0,0,0,.12);
+}
+
+.avatar img{
+width:100%;
+height:500px;
+object-fit:contain;
+}
+
+.panel{
+background:white;
+padding:35px;
+border-radius:25px;
+box-shadow:0 10px 35px rgba(0,0,0,.12);
+}
+
+select{
+width:100%;
+padding:14px;
+margin-top:10px;
+margin-bottom:25px;
+border-radius:12px;
+border:1px solid #ddd;
+font-size:16px;
+}
+
+.variantes{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+margin-top:20px;
+}
+
+.variante{
+background:#F8F5F2;
+padding:10px;
+border-radius:15px;
+cursor:pointer;
+transition:.3s;
+text-align:center;
+}
+
+.variante:hover{
+transform:translateY(-3px);
+box-shadow:0 5px 15px rgba(0,0,0,.12);
+}
+
+.variante img{
+width:100%;
+height:140px;
+object-fit:cover;
+border-radius:10px;
+}
+
+.variante p{
+margin-top:8px;
+font-size:14px;
+}
+
+.resumen{
+margin-top:25px;
+padding:20px;
+background:#F8F5F2;
+border-radius:15px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 30px;
+background:#8C6E63;
+color:white;
+text-decoration:none;
+border:none;
+border-radius:50px;
+cursor:pointer;
+font-size:16px;
+font-weight:600;
+margin-top:20px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+@media(max-width:900px){
+
+.configurador{
+grid-template-columns:1fr;
+}
+
+.avatar img{
+height:320px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Crea tu compañero especial</h1>
+
+<p>Diseña una pieza única hecha especialmente para ti</p>
+
+</header>
+
+<div class="container">
+
+<div class="configurador">
+
+<div class="avatar">
+
+<img id="vistaPrevia" src="conejo.jpg">
+
+</div>
+
+<div class="panel">
+
+<h3>Elige a tu compañero</h3>
+
+<select id="animal">
+
+<option value="conejo">Conejo</option>
+<option value="perro">Perro</option>
+<option value="gato">Gato</option>
+<option value="tortuga">Tortuga</option>
+
+</select>
+
+<h3>Versiones disponibles</h3>
+
+<div id="variantes" class="variantes"></div>
+
+<div class="resumen">
+
+<h3>Tu creación</h3>
+
+<p id="resumen">
+
+Compañero: Conejo<br>
+Versión: Clásica
+
+</p>
+
+</div>
+
+<button class="btn" onclick="enviarPedido()">
+
+Continuar con mi pedido
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const animal =
+document.getElementById("animal");
+
+const variantes =
+document.getElementById("variantes");
+
+const vistaPrevia =
+document.getElementById("vistaPrevia");
+
+let compañeroActual = "Conejo";
+let varianteActual = "Clásica";
+let imagenActual = "conejo.jpg";
+
+function cargarVariantes(){
+
+const base = animal.value;
+
+compañeroActual =
+animal.options[animal.selectedIndex].text;
+
+let lista = [];
+
+if(base==="conejo"){
+
+lista = [
+ {img:"conejo.jpg",nombre:"Clásica"},
+ {img:"conejo_camisa_azul.jpg",nombre:"Camisa Azul"},
+ {img:"conejo_camisa_roja.jpg",nombre:"Camisa Roja"},
+ {img:"conejo_lentes.jpg",nombre:"Lentes"},
+ {img:"conejo_mono.jpg",nombre:"Moño"}
+];
+
+}
+
+else if(base==="perro"){
+
+lista = [
+ {img:"perro.jpg",nombre:"Clásica"},
+ {img:"perro_camisa_azul.jpg",nombre:"Camisa Azul"},
+ {img:"perro_camisa_roja.jpg",nombre:"Camisa Roja"},
+ {img:"perro_lentes.jpg",nombre:"Lentes"},
+ {img:"perro_mono.jpg",nombre:"Moño"}
+];
+
+}
+
+else if(base==="gato"){
+
+lista = [
+ {img:"gato.jpg",nombre:"Clásica"},
+ {img:"gato_camisa_azul.jpg",nombre:"Camisa Azul"},
+ {img:"gato_camisa_roja.jpg",nombre:"Camisa Roja"},
+ {img:"gato_lentes.jpg",nombre:"Lentes"},
+ {img:"gato_mono.jpg",nombre:"Moño"}
+];
+
+}
+
+else if(base==="tortuga"){
+
+lista = [
+ {img:"tortuga.jpg",nombre:"Clásica"},
+ {img:"tortuga_lentes.jpg",nombre:"Lentes"}
+];
+
+}
+
+variantes.innerHTML = "";
+
+lista.forEach(item=>{
+
+const card =
+document.createElement("div");
+
+card.className = "variante";
+
+card.innerHTML = `
+<img src="${item.img}">
+<p>${item.nombre}</p>
+`;
+
+card.onclick = ()=>{
+
+vistaPrevia.src = item.img;
+
+imagenActual = item.img;
+
+varianteActual = item.nombre;
+
+actualizarResumen();
+
+};
+
+variantes.appendChild(card);
+
+});
+
+vistaPrevia.src = `${base}.jpg`;
+
+imagenActual = `${base}.jpg`;
+
+varianteActual = "Clásica";
+
+actualizarResumen();
+
+}
+
+function actualizarResumen(){
+
+document.getElementById("resumen").innerHTML =
+
+"Compañero: " +
+compañeroActual +
+
+"<br>Versión: " +
+varianteActual;
+
+}
+
+function enviarPedido(){
+
+const mensaje =
+
+`Hola SHERAN.
+
+Quiero solicitar una creación.
+
+Compañero: ${compañeroActual}
+Versión: ${varianteActual}
+
+Imagen de referencia:
+${imagenActual}`;
+
+window.open(
+
+"https://api.whatsapp.com/send/?phone=51977566996&text=" +
+encodeURIComponent(mensaje),
+
+"_blank"
+
+);
+
+}
+
+animal.addEventListener("change",cargarVariantes);
+
+cargarVariantes();
+
+</script>
+
+</body>
+
+</html>

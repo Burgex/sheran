@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHERAN | Amigurumis Artesanales</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;background:#F8F5F2;color:#4A3A34;}
+nav{position:fixed;top:0;width:100%;background:white;padding:18px 8%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 15px rgba(0,0,0,.08);z-index:1000;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;letter-spacing:3px;}
+nav ul{display:flex;gap:30px;list-style:none;}
+nav a{text-decoration:none;color:#4A3A34;font-weight:500;}
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 20px;background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url("conejo.jpg");background-size:cover;background-position:center;color:white;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:80px;letter-spacing:5px;margin-bottom:20px;}
+.hero p{font-size:20px;max-width:700px;margin:auto;line-height:1.7;}
+.btn{display:inline-block;margin-top:30px;padding:15px 35px;background:#8C6E63;color:white;text-decoration:none;border-radius:50px;transition:.3s;}
+.btn:hover{transform:translateY(-3px);}
+section{padding:90px 8%;}
+.section-title{text-align:center;margin-bottom:60px;}
+.section-title h2{font-family:'Cormorant Garamond',serif;font-size:50px;margin-bottom:10px;}
+.about{max-width:900px;margin:auto;text-align:center;line-height:1.9;font-size:18px;}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;}
+.card{background:white;border-radius:20px;overflow:hidden;box-shadow:0 5px 25px rgba(0,0,0,.08);transition:.3s;}
+.card:hover{transform:translateY(-8px);}
+.card img{width:100%;height:320px;object-fit:cover;}
+.card-content{padding:25px;text-align:center;}
+.card h3{font-family:'Cormorant Garamond',serif;font-size:32px;margin-bottom:10px;}
+.card p{color:#666;margin-bottom:20px;}
+.price{font-size:22px;font-weight:600;margin-bottom:20px;}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;margin-top:40px;}
+.step{background:white;padding:35px;border-radius:15px;text-align:center;box-shadow:0 5px 20px rgba(0,0,0,.08);}
+.step h3{margin-bottom:15px;}
+footer{background:#4A3A34;color:white;text-align:center;padding:40px;}
+.whatsapp{position:fixed;bottom:25px;right:25px;background:#25D366;color:white;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;text-decoration:none;box-shadow:0 5px 20px rgba(0,0,0,.3);}
+@media(max-width:768px){
+.hero h1{font-size:55px;}
+.hero p{font-size:16px;}
+nav ul{display:none;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="logo">SHERAN</div>
+<ul>
+<li><a href="#nosotros">Nosotros</a></li>
+<li><a href="#catalogo">Colección</a></li>
+<li><a href="#pedido">Pedidos</a></li>
+</ul>
+</nav>
+
+<header class="hero">
+<div>
+<h1>SHERAN</h1>
+<p>Amigurumis artesanales tejidos a mano. Regalos únicos creados para transformar momentos especiales en recuerdos inolvidables.</p>
+<a href="#catalogo" class="btn">Descubrir Colección</a>
+</div>
+</header>
+
+<section id="nosotros">
+<div class="section-title">
+<h2>Nuestra Historia</h2>
+</div>
+<div class="about">
+En SHERAN creemos que los regalos más valiosos son aquellos hechos con dedicación. Cada amigurumi es tejido a mano con cuidado, detalle y creatividad para ofrecer piezas únicas que transmitan emociones y acompañen momentos especiales.
+</div>
+</section>
+
+<section id="catalogo">
+<div class="section-title">
+<h2>Colección Destacada</h2>
+</div>
+
+<div class="products">
+
+<div class="card">
+<img src="tortuga.jpg" alt="Tortuga">
+<div class="card-content">
+<h3>Tortuga</h3>
+<p>Una compañía tranquila inspirada en la naturaleza.</p>
+<div class="price">Desde S/49</div>
+</div>
+</div>
+
+<div class="card">
+<img src="conejo.jpg" alt="Conejo">
+<div class="card-content">
+<h3>Conejo</h3>
+<p>Delicado, cálido y lleno de personalidad.</p>
+<div class="price">Desde S/59</div>
+</div>
+</div>
+
+<div class="card">
+<img src="gato.jpg" alt="Gato">
+<div class="card-content">
+<h3>Gato</h3>
+<p>Elegancia y ternura en una pieza única.</p>
+<div class="price">Desde S/59</div>
+</div>
+</div>
+
+<div class="card">
+<img src="perro.jpg" alt="Perro">
+<div class="card-content">
+<h3>Perro</h3>
+<p>Lealtad, cariño y detalles hechos a mano.</p>
+<div class="price">Desde S/69</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="pedido">
+
+<div class="section-title">
+<h2>¿Cómo hacer tu pedido?</h2>
+</div>
+
+<div class="steps">
+
+<div class="step">
+<h3>1. Elige tu compañero</h3>
+<p>Descubre la colección y selecciona la pieza que más te represente.</p>
+<a href="personalizar.html" class="btn">Comenzar</a>
+</div>
+
+<div class="step">
+<h3>2. Encuentra tu inspiración</h3>
+<p>Explora distintas versiones y elige la que más se acerque a tu idea.</p>
+<a href="personalizar.html" class="btn">Ver Inspiraciones</a>
+</div>
+
+<div class="step">
+<h3>3. Confirma tu pedido</h3>
+<p>Te acompañaremos en los últimos detalles para crear una pieza única.</p>
+<a href="https://api.whatsapp.com/send/?phone=51977566996" class="btn" target="_blank">Contactar</a>
+</div>
+
+</div>
+</section>
+
+<footer>
+<h3>SHERAN</h3>
+<p>Amigurumis hechos con amor 🧸</p>
+</footer>
+
+<a class="whatsapp" href="https://api.whatsapp.com/send/?phone=51977566996&text=Hola,%20quiero%20hacer%20un%20pedido%20de%20amigurumis" target="_blank">💬</a>
+
+</body>
+</html>
